@@ -330,6 +330,9 @@ class Arquivo(object):
             #     header.controlecob_data_gravacao = self.header.arquivo_data_de_geracao
 
         lote_pag.adicionar_evento(evento)
+        #TODO: Refatorar e transformar em metodo do Lote ou no evento
+        lote_pag.trailer.total_valor_pagtos += t_pag_for.valor_pagto
+
         # Incrementar numero de registros no trailer do arquivo
         self.trailer.totais_quantidade_registros += len(evento)
 
