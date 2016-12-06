@@ -299,10 +299,16 @@ class Arquivo(object):
     # Implementação para Pag_For
     def incluir_pagamento(self, **kwargs):
         # 20: PAGTO FORNECEDORES
+        from cnab240 import bancos
+
         codigo_evento = 20
         evento = Evento(self.banco, codigo_evento)
 
-        t_pag_for = self.banco.registros.TransacaoPagFor(**kwargs)
+        if self.banco == bancos.bradescoPagFor:
+            t_pag_for = self.banco.registros.TransacaoPagFor(**kwargs)
+        else:
+            t_pag_for = self.banco.registros.SegmentoA(**kwargs)
+
         evento.adicionar_segmento(t_pag_for)
 
         lote_pag = self.encontrar_lote_pag(codigo_evento)
