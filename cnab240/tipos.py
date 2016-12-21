@@ -4,6 +4,7 @@ import codecs
 import importlib
 from datetime import datetime
 from cnab240 import errors
+from decimal import Decimal
 
 
 class Evento(object):
@@ -304,34 +305,31 @@ class Arquivo(object):
         codigo_evento = 20
         evento = Evento(self.banco, codigo_evento)
 
-        if self.banco == bancos.bradescoPagFor:
-            t_pag_for = self.banco.registros.TransacaoPagFor(**kwargs)
-        else:
-            t_pag_for = self.banco.registros.SegmentoA(**kwargs)
+        valor_pagto = 0
 
-        evento.adicionar_segmento(t_pag_for)
+        segmentos = []
+        if self.banco == bancos.bradescoPagFor:
+            segmentos.append(self.banco.registros.TransacaoPagFor(**kwargs))
+        else:
+
+            valor_pagto = kwargs.get('valor_pagto', Decimal('0.00'))
+            segmentos.append(self.banco.registros.SegmentoA(**kwargs))
+            segmentos.append(self.banco.registros.SegmentoB(**kwargs))
+
+        for segmento in segmentos:
+            evento.adicionar_segmento(segmento)
 
         lote_pag = self.encontrar_lote_pag(codigo_evento)
 
         if lote_pag is None:
-            # header = self.banco.registros.HeaderLoteCobranca(**self.header.todict())
-            # trailer = self.banco.registros.TrailerLoteCobranca()
             header = None
             trailer = None
             lote_pag = Lote(self.banco, header, trailer)
             self.adicionar_lote(lote_pag)
 
-            # if header.controlecob_numero is None:
-            #     header.controlecob_numero = int('{0}{1:02}'.format(
-            #         self.header.arquivo_sequencia,
-            #         lote_pag.codigo))
-
-            # if header.controlecob_data_gravacao is None:
-            #     header.controlecob_data_gravacao = self.header.arquivo_data_de_geracao
-
         lote_pag.adicionar_evento(evento)
-        #TODO: Refatorar e transformar em metodo do Lote ou no evento
-        lote_pag.trailer.total_valor_pagtos += t_pag_for.valor_pagto
+        # TODO: Refatorar e transformar em metodo do Lote ou no evento
+        lote_pag.trailer.total_valor_pagtos += valor_pagto
 
         # Incrementar numero de registros no trailer do arquivo
         self.trailer.totais_quantidade_registros += len(evento)
