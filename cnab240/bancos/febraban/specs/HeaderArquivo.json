@@ -1,39 +1,32 @@
 {
   "nome": "HeaderArquivo",
   "campos": {
-    "00.0": {
+    "01.0": {
       "nome": "codigo_banco",
       "posicao_inicio": 1,
       "posicao_fim": 3,
       "formato": "num"
     },
-    "01.0": {
+    "02.0": {
       "nome": "controle_lote",
       "posicao_inicio": 4,
       "posicao_fim": 7,
       "formato": "num",
       "default": 0
     },
-    "02.0": {
+    "03.0": {
       "nome": "controle_registro",
       "posicao_inicio": 8,
       "posicao_fim": 8,
       "formato": "num",
       "default": 0
     },
-    "03.0": {
+    "04.0": {
       "nome": "vazio1",
       "posicao_inicio": 9,
-      "posicao_fim": 14,
+      "posicao_fim": 17,
       "formato": "alfa",
       "default": ""
-    },
-    "04.0": {
-      "nome": "layout_arquivo",
-      "posicao_inicio": 15,
-      "posicao_fim": 17,
-      "formato": "num",
-        "default": 81
     },
     "05.0": {
       "nome": "tipo_inscricao",
@@ -49,7 +42,7 @@
       "formato": "num"
     },
     "07.0": {
-      "nome": "vazio2",
+      "nome": "convenio",
       "posicao_inicio": 33,
       "posicao_fim": 52,
       "formato": "alfa",
@@ -62,7 +55,7 @@
       "formato": "num"
     },
     "09.0": {
-      "nome": "vazio3",
+      "nome": "numero_agencia_dv",
       "posicao_inicio": 58,
       "posicao_fim": 58,
       "formato": "alfa",
@@ -75,17 +68,18 @@
       "formato": "num"
     },
     "11.0": {
-      "nome": "vazio4",
+      "nome": "numero_conta_dv",
       "posicao_inicio": 71,
       "posicao_fim": 71,
       "formato": "alfa",
       "default": ""
     },
     "12.0": {
-      "nome": "agencia_conta_dv",
+      "nome": "numero_dac",
       "posicao_inicio": 72,
       "posicao_fim": 72,
-      "formato": "num"
+      "formato": "alfa",
+      "default": ""
     },
     "13.0": {
       "nome": "nome_empresa",
@@ -129,20 +123,20 @@
     "19.0": {
       "nome": "vazio6",
       "posicao_inicio": 158,
-      "posicao_fim": 166,
+      "posicao_fim": 163,
       "formato": "num",
       "default": 0
     },
     "20.0": {
-      "nome": "densidade",
-      "posicao_inicio": 167,
-      "posicao_fim": 171,
+      "nome": "numero_layout_arquivo",
+      "posicao_inicio": 164,
+      "posicao_fim": 166,
       "formato": "num",
-      "default": 0
+      "default": 101
     },
     "21.0": {
       "nome": "vazio7",
-      "posicao_inicio": 172,
+      "posicao_inicio": 167,
       "posicao_fim": 240,
       "formato": "alfa",
       "default": ""

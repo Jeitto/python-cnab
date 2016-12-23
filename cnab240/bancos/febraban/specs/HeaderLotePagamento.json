@@ -1,84 +1,77 @@
 {
   "nome": "HeaderLotePagamento",
   "campos": {
-    "00.1": {
+    "01.1": {
       "nome": "codigo_banco",
       "posicao_inicio": 1,
       "posicao_fim": 3,
       "formato": "num"
     },
-    "01.1": {
+    "02.1": {
       "nome": "controle_lote",
       "posicao_inicio": 4,
       "posicao_fim": 7,
       "formato": "num",
       "default": 0
     },
-    "02.1": {
+    "03.1": {
       "nome": "controle_registro",
       "posicao_inicio": 8,
       "posicao_fim": 8,
       "formato": "num",
       "default": 1
     },
-    "03.1": {
+    "04.1": {
       "nome": "servico_operacao",
       "posicao_inicio": 9,
       "posicao_fim": 9,
       "formato": "alfa",
       "default": "C"
     },
-    "04.1": {
+    "05.1": {
       "nome": "tipo_pagamento",
       "posicao_inicio": 10,
       "posicao_fim": 11,
       "formato": "num",
       "default": 98
     },
-    "05.1": {
+    "06.1": {
       "nome": "forma_pagamento",
       "posicao_inicio": 12,
       "posicao_fim": 13,
       "formato": "num", 
       "default": 1
     },
-    "06.1": {
-      "nome": "servico_servico",
+    "07.1": {
+      "nome": "numero_layout_lote",
       "posicao_inicio": 14,
       "posicao_fim": 16,
       "formato": "num",
-      "default": 40
+      "default": 45
     },
-    "07.1": {
+    "08.1": {
       "nome": "vazio1",
       "posicao_inicio": 17,
       "posicao_fim": 17,
       "formato": "alfa",
       "default": ""
     },
-    "08.1": {
+    "09.1": {
       "nome": "tipo_inscricao",
       "posicao_inicio": 18,
       "posicao_fim": 18,
       "formato": "num",
       "default": 2
     },
-    "09.1": {
+    "10.1": {
       "nome": "numero_inscricao",
       "posicao_inicio": 19,
       "posicao_fim": 32,
       "formato": "num"
     },
-    "10.1": {
-      "nome": "identificacao_lancamento",
-      "posicao_inicio": 33,
-      "posicao_fim": 36,
-      "formato": "alfa",
-      "default": ""
-    },
     "11.1": {
-      "nome": "vazio2",
-      "posicao_inicio": 37,
+      "nome": "convenio",
+      "posicao_inicio": 33,
       "posicao_fim": 52,
       "formato": "alfa",
       "default": ""
@@ -90,7 +83,7 @@
       "formato": "num"
     },
     "13.1": {
-      "nome": "vazio3",
+      "nome": "numero_agencia_dv",
       "posicao_inicio": 58,
       "posicao_fim": 58,
       "formato": "alfa",
@@ -103,17 +96,18 @@
       "formato": "num"
     },
     "15.1": {
-      "nome": "vazio4",
+      "nome": "numero_conta_dv",
       "posicao_inicio": 71,
       "posicao_fim": 71,
       "formato": "alfa",
       "default": ""
     },
     "16.1": {
-      "nome": "agencia_conta_dv",
+      "nome": "numero_dac",
       "posicao_inicio": 72,
       "posicao_fim": 72,
-      "formato": "num"
+      "formato": "alfa",
+      "default": ""
     },
     "17.1": {
       "nome": "nome_empresa",
