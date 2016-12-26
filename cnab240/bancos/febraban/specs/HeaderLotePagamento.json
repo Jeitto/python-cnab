@@ -33,7 +33,7 @@
       "posicao_inicio": 10,
       "posicao_fim": 11,
       "formato": "num",
-      "default": 98
+      "default": 20
     },
     "06.1": {
       "nome": "forma_pagamento",
